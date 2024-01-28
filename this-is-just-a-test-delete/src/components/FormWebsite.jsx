@@ -3,16 +3,24 @@ import { useState } from "react";
 import "./components-style/FormWebsite.css";
 
 const FormWebsite = () => {
-  let [email, setEmail] = useState("peter");
+  let [email, setEmail] = useState("Email");
+  let [password, setPassword] = useState("Password");
 
-  function handleSetEmail() {
+  function handleSetEmail(e) {
+    e.preventDefault();
     const customerEmail = document.getElementById("exampleInputEmail1").value;
+    const customerPassword = document.getElementById(
+      "exampleInputPassword1"
+    ).value;
+
     setEmail(customerEmail);
+    setPassword(customerPassword);
   }
 
   return (
     <>
-      <h1>{email}</h1>
+      <h1>Email: {email}</h1>
+      <h1>Password: {password}</h1>
       <div className="container m-5">
         <form className="p-5 form-border">
           <div className="mb-3">
